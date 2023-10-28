@@ -90,7 +90,35 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+  // Prompt user for password length
+  var length = parseInt(prompt("How many characters do you want your password to be?"));
 
+  // Validation password length
+  if (isNaN(length) || length < 8 || length > 128) {
+    alert("Password length must be a number between 8 and 128.");
+    return;
+  }
+
+  // Prompt user character types
+  var hasLower = confirm("Do you want to include lowercase letters?");
+  var hasUpper = confirm("Do you want to include upperCase letter?");
+  var hasNumeric = confirm("Do you want to include numbers?");
+  var hasSpecial = confirm("Do you want to include special characters?");
+
+  // Validate character types
+  if (!hasLower && !hasUpper && !hasNumeric && !hasSpecial) {
+    alert("You must select at least one character type.");
+    return;
+  }
+
+  // Return an object with password options
+  return {
+    length: length,
+    hasLower: hasLower,
+    hasUpper: hasUpper,
+    hasNumeric: hasNumeric,
+    hasSpecial: hasSpecial
+  };
 }
 
 // Function for getting a random element from an array
