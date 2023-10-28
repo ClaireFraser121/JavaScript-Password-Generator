@@ -16,23 +16,24 @@ var upperCasedCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 // Function to prompt the user for password options
 function getPasswordOptions() {
   // Prompt the user for the desired password length
-  var length = parseInt(prompt("How many characters do you want your password to be?"));
+  var length = parseInt(prompt("Welcome to the Password Generator! How long would you like your password to be? (Enter a number between 8 and 128):")
+  );
 
   // Validate password length
   if (isNaN(length) || length < 8 || length > 128) {
-    alert("Password length must be a number between 8 and 128.");
+    alert("Please enter a valid password length between 8 and 128 characters.");
     return null; // Return null to indicate an invalid input
   }
 
   // Prompt the user to select character types
-  var hasLower = confirm("Include lowercase letters?");
-  var hasUpper = confirm("Include uppercase letters?");
-  var hasNumeric = confirm("Include numbers?");
-  var hasSpecial = confirm("Include special characters?");
+  var hasLower = confirm("Do you want to include lowercase letters in your password?");
+  var hasUpper = confirm("Do you want to include uppercase letters in your password?");
+  var hasNumeric = confirm("Do you want to include numbers in your password?");
+  var hasSpecial = confirm("Do you want to include special characters in your password?");
 
   // Validate selected character types
   if (!hasLower && !hasUpper && !hasNumeric && !hasSpecial) {
-    alert("You must select at least one character type.");
+    alert("You must select at least one character type for your password.");
     return null; // Return null to indicate an invalid input
   }
 
