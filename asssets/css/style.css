@@ -1,30 +1,36 @@
+/* Apply box-sizing to all elements, including padding and borders */
 * {
   box-sizing: border-box;
 }
 
+/* Reset default margin and padding for the body and make it full height */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
+/* Set the body's background color, font, and style */
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
 }
 
+/* Center the content vertically and horizontally using CSS Grid */
 .wrapper {
   display: grid;
   place-items: center;
   height: 100%;
 }
 
+/* Style the header with text alignment and padding */
 header {
   text-align: center;
   padding: 20px;
   color: hsl(206, 17%, 28%);
 }
 
+/* Style the card container with background, border, and shadow */
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -35,6 +41,7 @@ header {
   text-align: center;
 }
 
+/* Style the textarea for the generated password */
 textarea {
   width: 100%;
   padding: 15px;
@@ -47,6 +54,7 @@ textarea {
   overflow: hidden;
 }
 
+/* Style the "Generate Password" button */
 button {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -61,15 +69,18 @@ button {
   cursor: pointer;
 }
 
+/* Style the "Generate Password" button when it's disabled */
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
 }
 
+/* Float an element to the right */
 .float-right {
   float: right;
 }
 
+/* Style the modal for password options */
 .modal {
   display: none;
   position: fixed;
@@ -84,6 +95,7 @@ button[disabled] {
   text-align: center;
 }
 
+/* Style the close button in the modal */
 .close-button {
   position: absolute;
   top: 10px;
@@ -92,12 +104,14 @@ button[disabled] {
   cursor: pointer;
 }
 
+/* Style the content within the modal */
 .modal-content {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
 }
 
+/* Style general buttons in the modal */
 .btn {
   margin-top: 10px;
 }
