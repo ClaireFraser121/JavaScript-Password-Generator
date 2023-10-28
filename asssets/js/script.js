@@ -15,16 +15,19 @@ var upperCasedCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
 // Function to prompt the user for password options
 function getPasswordOptions() {
+  // Check: Get references to the modal and its elements
   const optionsModal = document.getElementById('optionsModal');
   const optionsConfirmBtn = document.getElementById('optionsConfirm');
 
+  // Get references to input elements within the modal
   const passwordLengthInput = document.getElementById('passwordLength');
   const includeLowerInput = document.getElementById('includeLower');
   const includeUpperInput = document.getElementById('includeUpper');
   const includeNumbersInput = document.getElementById('includeNumbers');
   const includeSpecialInput = document.getElementById('includeSpecial');
 
-  optionsModal.style.display = 'block'; // Show the modal
+  // Display the modal
+  optionsModal.style.display = 'block';
 
   // Add an event listener to confirm options and generate the password
   optionsConfirmBtn.addEventListener('click', () => {
@@ -42,13 +45,15 @@ function getPasswordOptions() {
       ) {
           alert('Invalid options. Please try again.');
       } else {
-          optionsModal.style.display = 'none'; // Close the modal
+          // Close the modal
+          optionsModal.style.display = 'none';
+          // Generate the password based on the selected options
           generatePassword({ length, hasLower, hasUpper, hasNumbers, hasSpecial });
       }
   });
 
-  // Add an event listener to close the modal
-  document.querySelector('.btn-close').addEventListener('click', () => {
+  // Add an event listener to close the modal when the "×" button is clicked
+  document.querySelector('.close-button').addEventListener('click', () => {
       optionsModal.style.display = 'none';
   });
 }
@@ -87,13 +92,14 @@ function generatePassword(options) {
       password += getRandom(possibleCharacters);
   }
 
+  // Set the generated password in the textarea
   document.getElementById('password').value = password;
 }
 
 // Get reference to the "Generate Password" button element
 const generateBtn = document.getElementById('generate');
 
-// Add an event listener to open the options modal
+// Add an event listener to open the options modal when the button is clicked
 generateBtn.addEventListener('click', () => {
   getPasswordOptions();
 });
