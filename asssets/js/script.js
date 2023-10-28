@@ -15,105 +15,85 @@ var upperCasedCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
 // Function to prompt the user for password options
 function getPasswordOptions() {
-  // Prompt the user for the desired password length
-  var length = parseInt(prompt("Welcome to the Password Generator! How long would you like your password to be? (Enter a number between 8 and 128):")
-  );
+  const optionsModal = document.getElementById('optionsModal');
+  const optionsConfirmBtn = document.getElementById('optionsConfirm');
 
-  // Validate password length
-  if (isNaN(length) || length < 8 || length > 128) {
-    alert("Please enter a valid password length between 8 and 128 characters.");
-    return null; // Return null to indicate an invalid input
-  }
+  const passwordLengthInput = document.getElementById('passwordLength');
+  const includeLowerInput = document.getElementById('includeLower');
+  const includeUpperInput = document.getElementById('includeUpper');
+  const includeNumbersInput = document.getElementById('includeNumbers');
+  const includeSpecialInput = document.getElementById('includeSpecial');
 
-  // Prompt the user to select character types
-  var hasLower = confirm("Do you want to include lowercase letters in your password?\n\nClick OK for YES or cancel for NO.");
-  var hasUpper = confirm("Do you want to include uppercase letters in your password?\n\nClick OK for YES or cancel for NO.");
-  var hasNumeric = confirm("Do you want to include numbers in your password?\n\nClick OK for YES or cancel for NO.");
-  var hasSpecial = confirm("Do you want to include special characters in your password?\n\nClick OK for YES or cancel for NO.");
+  optionsModal.style.display = 'block'; // Show the modal
 
-  // Validate selected character types
-  if (!hasLower && !hasUpper && !hasNumeric && !hasSpecial) {
-    alert("You must select at least one character type.");
-    return null; // Return null to indicate an invalid input
-  }
+  // Add an event listener to confirm options and generate the password
+  optionsConfirmBtn.addEventListener('click', () => {
+      const length = parseInt(passwordLengthInput.value);
+      const hasLower = includeLowerInput.checked;
+      const hasUpper = includeUpperInput.checked;
+      const hasNumbers = includeNumbersInput.checked;
+      const hasSpecial = includeSpecialInput.checked;
 
-  // Return an object with password options
-  return {
-    length: length,
-    hasLower: hasLower,
-    hasUpper: hasUpper,
-    hasNumeric: hasNumeric,
-    hasSpecial: hasSpecial
-  };
+      if (
+          isNaN(length) ||
+          length < 8 ||
+          length > 128 ||
+          (!hasLower && !hasUpper && !hasNumbers && !hasSpecial)
+      ) {
+          alert('Invalid options. Please try again.');
+      } else {
+          optionsModal.style.display = 'none'; // Close the modal
+          generatePassword({ length, hasLower, hasUpper, hasNumbers, hasSpecial });
+      }
+  });
+
+  // Add an event listener to close the modal
+  document.querySelector('.btn-close').addEventListener('click', () => {
+      optionsModal.style.display = 'none';
+  });
 }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-  // Get a random index from the array
-  var index = Math.floor(Math.random() * arr.length);
-
-  // Return the element at that index
+  const index = Math.floor(Math.random() * arr.length);
   return arr[index];
 }
 
 // Function to generate a password based on user input
-function generatePassword() {
-  var options = getPasswordOptions();
+function generatePassword(options) {
+  const { length, hasLower, hasUpper, hasNumbers, hasSpecial } = options;
 
-  if (!options) {
-    console.log('Invalid options. Exiting password generation.'); // Debugging
-    return; // Exit if options are invalid
+  const possibleCharacters = [];
+
+  if (hasLower) {
+      possibleCharacters.push(...lowerCasedCharacters);
   }
 
-  var possibleCharacters = [];
-
-  // Include selected character types in possibleCharacters array
-  if (options.hasLower) {
-    possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
+  if (hasUpper) {
+      possibleCharacters.push(...upperCasedCharacters);
   }
 
-  if (options.hasUpper) {
-    possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
+  if (hasNumbers) {
+      possibleCharacters.push(...numericCharacters);
   }
 
-  if (options.hasNumeric) {
-    possibleCharacters = possibleCharacters.concat(numericCharacters);
+  if (hasSpecial) {
+      possibleCharacters.push(...specialCharacters);
   }
 
-  if (options.hasSpecial) {
-    possibleCharacters = possibleCharacters.concat(specialCharacters);
+  let password = '';
+
+  for (let i = 0; i < length; i++) {
+      password += getRandom(possibleCharacters);
   }
 
-  var password = [];
-
-  // Generate the password by randomly selecting characters from possibleCharacters
-  for (var i = 0; i < options.length; i++) {
-    password.push(getRandom(possibleCharacters));
-  }
-
-  // Return the generated password as a string
-  var generatedPassword = password.join('');
-  console.log('Generated Password:', generatedPassword); // Debugging
-  return generatedPassword;
-}
-// Get a reference to the #generate button element
-var generateBtn = document.querySelector('#generate');
-generateBtn.addEventListener('click', writePassword);
-
-// Function to write the generated password to the #password input field
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
-
-  if (password) {
-    passwordText.value = password;
-    console.log('Password displayed:', password); // Debugging
-  } else {
-    passwordText.value = '';
-    console.log('Password display skipped due to invalid options.'); // Debugging
-  }
+  document.getElementById('password').value = password;
 }
 
+// Get reference to the "Generate Password" button element
+const generateBtn = document.getElementById('generate');
 
-// Add an event listener to the #generate button, so the password is generated when the button is clicked
-generateBtn.addEventListener('click', writePassword);
+// Add an event listener to open the options modal
+generateBtn.addEventListener('click', () => {
+  getPasswordOptions();
+});

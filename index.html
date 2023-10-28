@@ -1,34 +1,37 @@
 <!DOCTYPE html>
-<html lang="en-gb">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
-    <link rel="stylesheet" href="./asssets/css/style.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="./asssets/css/style.css">
+</head>
+<body>
     <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
+        <header>
+            <h1>Password Generator</h1>
+        </header>
+        <div class="card">
+            <h2>Generate a Password</h2>
+            <textarea id="password" readonly placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+            <button id="generate">Generate Password</button>
         </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
-        </div>
-        <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
-        </div>
-      </div>
     </div>
-    <script src="./asssets/js/script.js"></script>
-  </body>
+    <div class="modal" id="optionsModal">
+        <span id="closeModalBtn" class="close-button">×</span>
+        <h2>Password Options</h2>
+        <label for="passwordLength">Password Length:</label>
+        <input type="number" id="passwordLength" min="8" max="128" required>
+        <label for="includeLower">Include Lowercase:</label>
+        <input type="checkbox" id="includeLower">
+        <label for="includeUpper">Include Uppercase:</label>
+        <input type="checkbox" id="includeUpper">
+        <label for="includeNumbers">Include Numbers:</label>
+        <input type="checkbox" id="includeNumbers">
+        <label for="includeSpecial">Include Special Characters:</label>
+        <input type="checkbox" id="includeSpecial">
+        <button id="optionsConfirm" class="btn">Confirm</button>
+    </div>
+    <script src="./asssets/js/script.js" defer></script>
+</body>
 </html>
