@@ -4,36 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
-    <!-- Include your custom CSS file for styling -->
     <link rel="stylesheet" href="./asssets/css/style.css">
 </head>
 <body>
-    <!-- Wrapper for the entire page content -->
     <div class="wrapper">
-        <!-- Page header with the title "Password Generator" -->
         <header>
             <h1>Password Generator</h1>
         </header>
-        <!-- Card for password generation -->
         <div class="card">
-            <!-- Subtitle: "Generate a Password" -->
             <h2>Generate a Password</h2>
-            <!-- Textarea to display the generated password -->
             <textarea id="password" readonly placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
-            <!-- Button to trigger password generation -->
             <button id="generate">Generate Password</button>
         </div>
     </div>
-    <!-- Modal for password options -->
     <div class="modal" id="optionsModal">
-        <!-- Button to close the modal -->
         <span id="closeModalBtn" class="close-button">×</span>
-        <!-- Modal title: "Password Options" -->
         <h2>Password Options</h2>
-        <!-- Input for selecting password length -->
         <label for="passwordLength">Password Length:</label>
         <input type="number" id="passwordLength" min="8" max="128" required>
-        <!-- Checkboxes to include lowercase, uppercase, numbers, and special characters -->
         <label for="includeLower">Include Lowercase:</label>
         <input type="checkbox" id="includeLower">
         <label for="includeUpper">Include Uppercase:</label>
@@ -42,10 +30,8 @@
         <input type="checkbox" id="includeNumbers">
         <label for="includeSpecial">Include Special Characters:</label>
         <input type="checkbox" id="includeSpecial">
-        <!-- Button to confirm options -->
         <button id="optionsConfirm" class="btn">Confirm</button>
     </div>
-    <!-- Include your custom JavaScript file for functionality -->
     <script src="./asssets/js/script.js" defer></script>
 </body>
 </html>
