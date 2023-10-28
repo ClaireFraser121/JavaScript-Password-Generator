@@ -26,14 +26,14 @@ function getPasswordOptions() {
   }
 
   // Prompt the user to select character types
-  var hasLower = confirm("Do you want to Include lowercase letters in your password?\n\nClick 'Yes' to include lowercase letters, or 'No' to exclude.");
-  var hasUpper = confirm("Do you want to include uppercase letters in your password?");
-  var hasNumeric = confirm("Do you want to include numbers in your password?");
-  var hasSpecial = confirm("Do you want to include special characters in your password?");
+  var hasLower = confirm("Do you want to include lowercase letters in your password?\n\nClick OK for YES or cancel for NO.");
+  var hasUpper = confirm("Do you want to include uppercase letters in your password?\n\nClick OK for YES or cancel for NO.");
+  var hasNumeric = confirm("Do you want to include numbers in your password?\n\nClick OK for YES or cancel for NO.");
+  var hasSpecial = confirm("Do you want to include special characters in your password?\n\nClick OK for YES or cancel for NO.");
 
   // Validate selected character types
   if (!hasLower && !hasUpper && !hasNumeric && !hasSpecial) {
-    alert("You must select at least one character type for your password.");
+    alert("You must select at least one character type.");
     return null; // Return null to indicate an invalid input
   }
 
