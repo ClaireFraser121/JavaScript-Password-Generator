@@ -89,6 +89,7 @@ button[disabled] {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
@@ -114,4 +115,85 @@ button[disabled] {
 /* Style general buttons in the modal */
 .btn {
   margin-top: 10px;
+}
+
+/* Add these styles to your custom CSS file */
+
+/* Style for the modal overlay */
+.modal-overlay {
+  display: flex;
+  position: center;
+  align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Style for the modal container */
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(0.8);
+  transition: transform 0.3s;
+}
+
+/* Style for the modal header */
+.modal-header {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Style for the close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333; /* Change the color to your preference */
+}
+
+/* Style for the form elements */
+.modal-form label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.modal-form input[type="number"],
+.modal-form input[type="checkbox"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc; /* Change the border color to your preference */
+  border-radius: 5px;
+}
+
+/* Style for the Confirm button */
+.confirm-button {
+  border: none;
+  background-color: #007bff; /* Change the background color to your preference */
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.confirm-button:hover {
+  background-color: #0056b3; /* Change the hover color to your preference */
 }
