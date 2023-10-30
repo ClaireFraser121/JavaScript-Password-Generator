@@ -70,19 +70,62 @@ button[disabled] {
   float: right;
 }
 
+/* Style the modal for password options */
 .modal {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  align-items: center;
-  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
   z-index: 1;
   text-align: center;
 }
+
+.modal-content {
+  padding: 20px; /* Increase the padding for more space */
+}
+
+/* Style the modal title and options */
+.modal h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.modal label {
+  display: flex;
+  margin: 10px 0;
+  font-weight: bold;
+  align-items: center;
+}
+
+.modal input[type="number"],
+.modal input[type="checkbox"] {
+  margin: 5px 0;
+  margin-left: 10px;
+}
+
+/* Style the Confirm button within the modal */
+#optionsConfirm {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+/* Style the Confirm button on hover */
+#optionsConfirm:hover {
+  background-color: #0056b3;
+}
+
 
 .close-button {
   position: absolute;
@@ -100,4 +143,17 @@ button[disabled] {
 
 .btn {
   margin-top: 10px;
+}
+
+/* Additional styles for the modal container */
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ccc;
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
