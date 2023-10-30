@@ -126,6 +126,14 @@ button[disabled] {
   background-color: #0056b3;
 }
 
+/* Add this CSS to style the checkboxes in a straight vertical line */
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
 
 .close-button {
   position: absolute;

@@ -15,12 +15,13 @@ var upperCasedCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
 // Function to prompt the user for password options
 function getPasswordOptions() {
-// Check: Get references to the modal and its elements
+  // Get references to the modal and its elements
   const optionsModal = document.getElementById('optionsModal');
   const optionsConfirmBtn = document.getElementById('optionsConfirm');
 
-// Get references to input elements within the modal
-  const passwordLengthInput = document.getElementById('passwordLength');
+  // Get references to input elements within the modal
+  const passwordLengthSlider = document.getElementById('passwordLength');
+  const passwordLengthValue = document.getElementById('passwordLengthValue');
   const includeLowerInput = document.getElementById('includeLower');
   const includeUpperInput = document.getElementById('includeUpper');
   const includeNumbersInput = document.getElementById('includeNumbers');
@@ -29,37 +30,44 @@ function getPasswordOptions() {
   // Display the modal
   optionsModal.style.display = 'block';
 
+  // Initialize the password length value
+  passwordLengthValue.textContent = passwordLengthSlider.value;
+
+  // Add an event listener to update the displayed value when the slider changes
+  passwordLengthSlider.addEventListener('input', function() {
+    passwordLengthValue.textContent = passwordLengthSlider.value;
+  });
+
   // Add an event listener to confirm options and generate the password
   optionsConfirmBtn.addEventListener('click', () => {
-      const length = parseInt(passwordLengthInput.value);
-      const hasLower = includeLowerInput.checked;
-      const hasUpper = includeUpperInput.checked;
-      const hasNumbers = includeNumbersInput.checked;
-      const hasSpecial = includeSpecialInput.checked;
+    const length = parseInt(passwordLengthSlider.value);
+    const hasLower = includeLowerInput.checked;
+    const hasUpper = includeUpperInput.checked;
+    const hasNumbers = includeNumbersInput.checked;
+    const hasSpecial = includeSpecialInput.checked;
 
-      if (
-          isNaN(length) ||
-          length < 8 ||
-          length > 128 ||
-          (!hasLower && !hasUpper && !hasNumbers && !hasSpecial)
-      ) {
-          // Replace the existing alert with a more user-friendly error message
+    if (
+      isNaN(length) ||
+      length < 8 ||
+      length > 128 ||
+      (!hasLower && !hasUpper && !hasNumbers && !hasSpecial)
+    ) {
+      // Replace the existing alert with a more user-friendly error message
       alert('Please check your options:\n\n' +
         '- Password length must be between 8 and 128 characters.\n' +
         '- At least one option (lowercase, uppercase, numbers, or special characters) must be selected.\n\n' +
         'Please try again.');
-
-      } else {
-          // Close the modal
+    } else {
+      // Close the modal
       optionsModal.style.display = 'none';
       // Generate the password based on the selected options
-          generatePassword({ length, hasLower, hasUpper, hasNumbers, hasSpecial });
-      }
+      generatePassword({ length, hasLower, hasUpper, hasNumbers, hasSpecial });
+    }
   });
 
   // Add an event listener to close the modal
   document.querySelector('.btn-close').addEventListener('click', () => {
-      optionsModal.style.display = 'none';
+    optionsModal.style.display = 'none';
   });
 }
 
@@ -76,28 +84,28 @@ function generatePassword(options) {
   const possibleCharacters = [];
 
   if (hasLower) {
-      possibleCharacters.push(...lowerCasedCharacters);
+    possibleCharacters.push(...lowerCasedCharacters);
   }
 
   if (hasUpper) {
-      possibleCharacters.push(...upperCasedCharacters);
+    possibleCharacters.push(...upperCasedCharacters);
   }
 
   if (hasNumbers) {
-      possibleCharacters.push(...numericCharacters);
+    possibleCharacters.push(...numericCharacters);
   }
 
   if (hasSpecial) {
-      possibleCharacters.push(...specialCharacters);
+    possibleCharacters.push(...specialCharacters);
   }
 
   let password = '';
 
   for (let i = 0; i < length; i++) {
-      password += getRandom(possibleCharacters);
+    password += getRandom(possibleCharacters);
   }
 
-// Set the generated password in the textarea
+  // Set the generated password in the textarea
   document.getElementById('password').value = password;
 }
 
