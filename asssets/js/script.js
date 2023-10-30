@@ -116,3 +116,15 @@ const generateBtn = document.getElementById('generate');
 generateBtn.addEventListener('click', () => {
   getPasswordOptions();
 });
+
+// Get reference to the "Copy Password" button element
+const copyBtn = document.getElementById('copy');
+
+// Add an event listener to copy the password to the clipboard when the button is clicked
+copyBtn.addEventListener('click', () => {
+  const passwordTextarea = document.getElementById('password');
+  passwordTextarea.select();
+  document.execCommand('copy');
+  // You can also provide user feedback here (e.g., alert or tooltip) to indicate the copy action.
+  alert('Password copied to clipboard');
+});
