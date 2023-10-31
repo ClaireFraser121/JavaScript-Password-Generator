@@ -32,8 +32,11 @@ body {
 header {
   text-align: center;
   padding: 20px;
-  color: hsl(206, 17%, 28%);
+  color: #f4f3ebe8; /* Change the text color to white or another color that contrasts with the background */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+  font-size: 36px; /* Adjust the size as needed */
 }
+
 
 .card {
   background-color: rgba(255, 255, 255, 0.7); /* Adjust the alpha (last) value */
