@@ -29,6 +29,20 @@ This is a simple password generator web application created as part of a coding 
 
 ![Password Generator Options Screenshot](./asssets/images/Password-Generator-Options.png)
 
+## Testing and Debugging
+
+- **Testing**: The Password Generator application has undergone extensive testing to ensure its functionality. The following testing methods were employed:
+  - **Unit Testing**: Individual components and functions were tested to verify that they work as expected. This includes testing password generation, slider value handling, and event listeners.
+  - **Integration Testing**: The application's components were tested together to ensure that they interact seamlessly. This included verifying that the modal opens and closes correctly and that user options are processed accurately.
+  - **User Testing**: The application was shared with real users to gather feedback and identify any issues they encountered. User feedback played a crucial role in refining the user interface and overall user experience.
+
+- **Debugging**: During the development of the Password Generator, various debugging techniques were used to identify and resolve issues. This involved:
+  - **Console Logging**: Strategically placed console.log statements were used to output information and identify the flow of the application, making it easier to pinpoint bugs.
+  - **Browser Developer Tools**: The browser's developer tools, including the Console and Elements tabs, were instrumental in diagnosing and fixing issues. It allowed for real-time inspection of variables and HTML/CSS elements.
+  - **Error Handling**: The application includes error handling code to gracefully handle unexpected user inputs and conditions. Error messages were provided to guide users when something goes wrong.
+
+By implementing these testing and debugging strategies, the Password Generator aims to deliver a reliable and user-friendly experience.
+
 ## Credits
 
 - Modal close button not working
