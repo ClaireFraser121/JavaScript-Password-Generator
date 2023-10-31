@@ -13,6 +13,16 @@ body {
   background-color: #f9fbfd;
 }
 
+body {
+  background-image: url("/asssets/images/Japanese_Graphic_Design_ukiyoe_woodblock_prin.jpg");
+  background-size: cover; /* Adjust as needed */
+  background-position: center; /* Adjust as needed */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional - keeps background fixed while scrolling */
+  /* You may need to set other background properties to fit your design */
+}
+
+
 .wrapper {
   display: grid;
   place-items: center;
@@ -26,7 +36,7 @@ header {
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
+  background-color: rgba(255, 255, 255, 0.7); /* Adjust the alpha (last) value */
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   color: hsl(206, 17%, 28%);
