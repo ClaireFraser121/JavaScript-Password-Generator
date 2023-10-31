@@ -98,7 +98,7 @@ button#generate:hover, button#copy:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
+  background-color:  #f0f0f0; /* Change to your preferred background color */
   padding: 50px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -129,6 +129,28 @@ button#generate:hover, button#copy:hover {
   margin: 5px 0;
   margin-left: 10px;
 }
+
+/* Unchecked checkbox style */
+input[type="checkbox"] {
+  border: 2px solid #666; /* Border color */
+}
+
+/* Checked checkbox style */
+input[type="checkbox"]:checked {
+  border: 2px solid rgb(25, 120, 103); /* Change to your preferred color */
+  background-color: rgb(46, 46, 138); /* Change to your preferred color */
+}
+
+input[type="range"] {
+  /* Set the track color */
+  background: #cccccc; /* Change to your preferred color */
+}
+
+/* Customize the thumb (slider handle) */
+input[type="range"]::-webkit-slider-thumb {
+  background: rgb(0, 255, 60); /* Change to your preferred color */
+}
+
 
 /* Style the Confirm button within the modal */
 #optionsConfirm {
