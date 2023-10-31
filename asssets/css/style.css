@@ -14,7 +14,7 @@ body {
 }
 
 body {
-  background-image: url("/asssets/images/Japanese_Graphic_Design_ukiyoe_woodblock_prin.jpg");
+  background-image: url("../images/Japanese_Graphic_Design_ukiyoe_woodblock_prin.jpg");
   background-size: cover; /* Adjust as needed */
   background-position: center; /* Adjust as needed */
   background-repeat: no-repeat;
