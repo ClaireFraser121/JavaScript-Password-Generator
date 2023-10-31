@@ -39,7 +39,7 @@ header {
 
 
 .card {
-  background-color: rgba(255, 255, 255, 0.7); /* Adjust the alpha (last) value */
+  background-color: rgba(208, 244, 233, 0.7); /* Adjust the alpha (last) value */
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   color: hsl(206, 17%, 28%);
@@ -59,7 +59,7 @@ textarea {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.7); /* Adjust the alpha (last) value */
+  background-color: #86c3b4c8; /* Adjust the alpha (last) value */
 }
 
 button {
@@ -87,7 +87,7 @@ button[disabled] {
 
 /* Add a hover effect to the Generate Password and Copy Password buttons */
 button#generate:hover, button#copy:hover {
-  background-color: #0056b3; /* Change the background color on hover */
+  background-color: #0e2958; /* Change the background color on hover */
   color: hsl(0, 0%, 100%); /* Change the text color on hover */
 }
 
@@ -144,7 +144,7 @@ button#generate:hover, button#copy:hover {
 
 /* Style the Confirm button on hover */
 #optionsConfirm:hover {
-  background-color: #0056b3;
+  background-color: #0e2958;
 }
 
 /* Add this CSS to style the checkboxes in a straight vertical line */
