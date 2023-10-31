@@ -27,6 +27,8 @@ This is a simple password generator web application created as part of a coding 
 - **Include Numbers**: Check this box to include numbers in the password.
 - **Include Special Characters**: Check this box to include special characters in the password.
 
+![Password Generator Options Screenshot](./asssets/images/Password-Generator-Options.png)
+
 ## Credits
 
 - Modal close button not working
