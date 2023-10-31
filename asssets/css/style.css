@@ -1,36 +1,38 @@
+/* Box-sizing reset to include padding and border in element dimensions */
 * {
   box-sizing: border-box;
 }
 
+/* Apply styles to both HTML and body elements */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
+/* General styling for the entire body */
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
-}
-
-body {
+  /* Background image properties */
   background-image: url("../images/Japanese_Graphic_Design_ukiyoe_woodblock_prin.jpg");
   background-size: cover; /* Adjust as needed */
   background-position: center; /* Adjust as needed */
   background-repeat: no-repeat;
   background-attachment: fixed; /* Optional - keeps background fixed while scrolling */
-  /* You may need to set other background properties to fit your design */
+  /* Alt text for the background image (for accessibility) */
   alt: "Background image depicting Japanese graphic design ukiyoe woodblock print"; /* Alt text for the background image */
 }
 
 
-
+/* Styling for the content wrapper, centered vertically */
 .wrapper {
   display: grid;
   place-items: center;
   height: 100%;
 }
 
+/* Styling for the page header */
 header {
   text-align: center;
   padding: 20px;
@@ -39,7 +41,7 @@ header {
   font-size: 36px; /* Adjust the size as needed */
 }
 
-
+/* Styling for the card containing password generation elements */
 .card {
   background-color: rgba(208, 244, 233, 0.7); /* Adjust the alpha (last) value */
   border-radius: 5px;
@@ -51,6 +53,7 @@ header {
   margin-bottom: 140px;
 }
 
+/* Styling for the password textarea */
 textarea {
   width: 100%;
   padding: 15px;
@@ -64,6 +67,7 @@ textarea {
   background-color: #86c3b4c8; /* Adjust the alpha (last) value */
 }
 
+/* Styling for buttons (Generate Password and Copy Password) */
 button {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -78,6 +82,7 @@ button {
   cursor: pointer;
 }
 
+/* Styling for disabled buttons */
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
@@ -87,7 +92,7 @@ button[disabled] {
   float: right;
 }
 
-/* Add a hover effect to the Generate Password and Copy Password buttons */
+/* Styling for hovering on Generate Password and Copy Password buttons */
 button#generate:hover, button#copy:hover {
   background-color: #0e2958; /* Change the background color on hover */
   color: hsl(0, 0%, 100%); /* Change the text color on hover */
@@ -109,6 +114,7 @@ button#generate:hover, button#copy:hover {
   text-align: center;
 }
 
+/* Styling for the content within the modal */
 .modal-content {
   padding: 20px; /* Increase the padding for more space */
 }
@@ -119,6 +125,7 @@ button#generate:hover, button#copy:hover {
   color: #333;
 }
 
+/* Styling for labels within the modal */
 .modal label {
   display: flex;
   margin: 10px 0;
@@ -126,29 +133,31 @@ button#generate:hover, button#copy:hover {
   align-items: center;
 }
 
+/* Styling for input elements (number and checkboxes) within the modal */
 .modal input[type="number"],
 .modal input[type="checkbox"] {
   margin: 5px 0;
   margin-left: 10px;
 }
 
-/* Unchecked checkbox style */
+/* Styling for unchecked checkboxes */
 input[type="checkbox"] {
   border: 2px solid #666; /* Border color */
   }
 
-/* Checked checkbox style */
+/* Styling for checked checkboxes */
 input[type="checkbox"]:checked {
   border: 2px solid rgb(25, 120, 103); /* Change to your preferred color */
   background-color: rgb(46, 46, 138); /* Change to your preferred color */
 }
 
+/* Styling for range input */
 input[type="range"] {
   /* Set the track color */
   background: #cccccc; /* Change to your preferred color */
 }
 
-/* Customize the thumb (slider handle) */
+/* Styling for the thumb (slider handle) in range input */
 input[type="range"]::-webkit-slider-thumb {
   background: rgb(0, 255, 60); /* Change to your preferred color */
 }
@@ -171,7 +180,7 @@ input[type="range"]::-webkit-slider-thumb {
   background-color: #0e2958;
 }
 
-/* Add this CSS to style the checkboxes in a straight vertical line */
+/* Styling for labels to display checkboxes in a vertical line */
 label {
   display: flex;
   flex-direction: column;
@@ -179,7 +188,7 @@ label {
   margin-bottom: 20px;
 }
 
-
+/* Styling for the close button within the modal */
 .close-button {
   position: absolute;
   top: 10px;
@@ -188,6 +197,7 @@ label {
   cursor: pointer;
 }
 
+/* Styling for the content within the modal */
 .modal-content {
   background-color: #fff;
   padding: 20px;
