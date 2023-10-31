@@ -33,6 +33,7 @@ header {
   font-size: 18px;
   padding: 30px;
   text-align: center;
+  margin-bottom: 140px;
 }
 
 textarea {
@@ -72,7 +73,7 @@ button[disabled] {
 
 /* Add a hover effect to the Generate Password and Copy Password buttons */
 button#generate:hover, button#copy:hover {
-  background-color: hsl(360, 91%, 50%); /* Change the background color on hover */
+  background-color: #0056b3; /* Change the background color on hover */
   color: hsl(0, 0%, 100%); /* Change the text color on hover */
 }
 
