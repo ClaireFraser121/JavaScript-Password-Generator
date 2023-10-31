@@ -20,7 +20,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed; /* Optional - keeps background fixed while scrolling */
   /* You may need to set other background properties to fit your design */
+  alt: "Background image depicting Japanese graphic design ukiyoe woodblock print"; /* Alt text for the background image */
 }
+
 
 
 .wrapper {
@@ -133,7 +135,7 @@ button#generate:hover, button#copy:hover {
 /* Unchecked checkbox style */
 input[type="checkbox"] {
   border: 2px solid #666; /* Border color */
-}
+  }
 
 /* Checked checkbox style */
 input[type="checkbox"]:checked {
